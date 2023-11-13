@@ -1,95 +1,290 @@
 import Image from 'next/image'
 import styles from './page.module.css'
+import { ThumbsUp, AlignJustify, Airplay, SendHorizontal, LayoutPanelTop, FileOutput, ChevronRight } from "lucide-react";
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.js</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <div>
+      <header className='navbar sticky-top flex-md-nowrap p-0 shadow' style={{backgroundColor:'#7039aa'}}>
+        <a className='navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6 text-white' href="#">Tourista</a>
+        <ul className="navbar-nav flex-row d-md-none">
+          <li className="nav-item text-nowrap">
+            <button className="nav-link px-3 text-white" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation"><AlignJustify size={18}/>
+            </button>
+          </li>
+        </ul>
+      </header>
+
+      <div className='container-fluid'>
+        <div className='row'>
+          {/* SIDEBAR */}
+          <div className='sidebar border border-right col-md-3 col-lg-2 p-0 bg-body-tertiary'>
+            <div className="offcanvas-md offcanvas-end bg-body-tertiary" tabindex="-1" id="sidebarMenu" aria-labelledby="sidebarMenuLabel">
+              <div className="offcanvas-header">
+                <h5 className="offcanvas-title" id="sidebarMenuLabel">Tourista</h5>
+                <button type="button" className="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#sidebarMenu" aria-label="Close"></button>
+              </div>
+              <div className="offcanvas-body d-md-flex flex-column p-0 pt-lg-3 overflow-y-auto">
+                <ul className="nav flex-column">
+                  <li className="nav-item">
+                    <a className="nav-link d-flex align-items-center gap-2 active" aria-current="page" href="#">
+                      <Airplay size={18}/>
+                      Dashboard
+                    </a>
+                  </li>
+                  <li className="nav-item">
+                    <a className="nav-link d-inline-flex align-items-center gap-2 collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
+                      <SendHorizontal size={18} strokeWidth={2.1}/>
+                      Orders
+                    </a>
+                    <div className="collapse show" id="home-collapse">
+                      <ul className="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                        <li>
+                          <a href="#" className="link-body-emphasis d-inline-flex text-decoration-none rounded">
+                            <ChevronRight size={16} strokeWidth={3}/>
+                            Overview
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#" className="link-body-emphasis d-inline-flex text-decoration-none rounded">
+                            <ChevronRight size={16} strokeWidth={3}/>
+                            Updates
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#" className="link-body-emphasis d-inline-flex text-decoration-none rounded">
+                            <ChevronRight size={16} strokeWidth={3} />
+                            Reports
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li className="nav-item">
+                    <a className="nav-link d-flex align-items-center gap-2" href="#">
+                      <Airplay size={18}/>
+                      Products
+                    </a>
+                  </li>
+                  <li className="nav-item">
+                    <a className="nav-link d-flex align-items-center gap-2" href="#">
+                      <Airplay size={18}/>  
+                      Customers
+                    </a>
+                  </li>
+                  <li className="nav-item">
+                    <a className="nav-link d-flex align-items-center gap-2" href="#">
+                      <Airplay size={18}/>
+                      Reports
+                    </a>
+                  </li>
+                  <li className="nav-item">
+                    <a className="nav-link d-flex align-items-center gap-2" href="#">
+                      <Airplay size={18}/>
+                      Integrations
+                    </a>
+                  </li>
+                </ul>
+
+                <h6 className="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-body-secondary text-uppercase">
+                  <span>Saved reports</span>
+                  <a className="link-secondary" href="#" aria-label="Add a new report">
+                    {/* plus icon */}
+                  </a>
+                </h6>
+                <ul className="nav flex-column mb-auto">
+                  <li className="nav-item">
+                    <a className="nav-link d-flex align-items-center gap-2" href="#">
+                      <Airplay size={18}/>
+                      Current month
+                    </a>
+                  </li>
+                  <li className="nav-item">
+                    <a className="nav-link d-flex align-items-center gap-2" href="#">
+                      <Airplay size={18}/>
+                      Last quarter
+                    </a>
+                  </li>
+                  <li className="nav-item">
+                    <a className="nav-link d-flex align-items-center gap-2" href="#">
+                      <Airplay size={18}/>
+                      Social engagement
+                    </a>
+                  </li>
+                  <li className="nav-item">
+                    <a className="nav-link d-flex align-items-center gap-2" href="#">
+                      <Airplay size={18}/>
+                      Year-end sale
+                    </a>
+                  </li>
+                </ul>
+
+                <hr className="my-3" />
+
+                <ul className="nav flex-column mb-auto">
+                  <li className="nav-item">
+                    <a className="nav-link d-flex align-items-center gap-2" href="#">
+                      <LayoutPanelTop size={18} />
+                      Settings
+                    </a>
+                  </li>
+                  <li className="nav-item">
+                    <a className="nav-link d-flex align-items-center gap-2" href="#">
+                      <FileOutput size={18} />
+                      Sign out
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* PAGEBODY */}
+          <main className='col-md-9 ms-sm-auto col-lg-10 px-md-4'>
+            {/* HEADER */}
+            <div className="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+              <h1 className="h2">Dashboard</h1>
+              <div className="btn-toolbar mb-2 mb-md-0">
+                <div className="btn-group me-2">
+                  <button type="button" className="btn btn-sm btn-outline-secondary">Share</button>
+                  <button type="button" className="btn btn-sm btn-outline-secondary">Export</button>
+                </div>
+              </div>
+            </div>
+
+            {/* BLANKBODY */}
+            <h3>Section title</h3>
+            <div className="table-responsive small">
+              <table className="table table-striped table-sm">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Header</th>
+                    <th scope="col">Header</th>
+                    <th scope="col">Header</th>
+                    <th scope="col">Header</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1,001</td>
+                    <td>random</td>
+                    <td>data</td>
+                    <td>placeholder</td>
+                    <td>text</td>
+                  </tr>
+                  <tr>
+                    <td>1,002</td>
+                    <td>placeholder</td>
+                    <td>irrelevant</td>
+                    <td>visual</td>
+                    <td>layout</td>
+                  </tr>
+                  <tr>
+                    <td>1,003</td>
+                    <td>data</td>
+                    <td>rich</td>
+                    <td>dashboard</td>
+                    <td>tabular</td>
+                  </tr>
+                  <tr>
+                    <td>1,003</td>
+                    <td>information</td>
+                    <td>placeholder</td>
+                    <td>illustrative</td>
+                    <td>data</td>
+                  </tr>
+                  <tr>
+                    <td>1,004</td>
+                    <td>text</td>
+                    <td>random</td>
+                    <td>layout</td>
+                    <td>dashboard</td>
+                  </tr>
+                  <tr>
+                    <td>1,005</td>
+                    <td>dashboard</td>
+                    <td>irrelevant</td>
+                    <td>text</td>
+                    <td>placeholder</td>
+                  </tr>
+                  <tr>
+                    <td>1,006</td>
+                    <td>dashboard</td>
+                    <td>illustrative</td>
+                    <td>rich</td>
+                    <td>data</td>
+                  </tr>
+                  <tr>
+                    <td>1,007</td>
+                    <td>placeholder</td>
+                    <td>tabular</td>
+                    <td>information</td>
+                    <td>irrelevant</td>
+                  </tr>
+                  <tr>
+                    <td>1,008</td>
+                    <td>random</td>
+                    <td>data</td>
+                    <td>placeholder</td>
+                    <td>text</td>
+                  </tr>
+                  <tr>
+                    <td>1,009</td>
+                    <td>placeholder</td>
+                    <td>irrelevant</td>
+                    <td>visual</td>
+                    <td>layout</td>
+                  </tr>
+                  <tr>
+                    <td>1,010</td>
+                    <td>data</td>
+                    <td>rich</td>
+                    <td>dashboard</td>
+                    <td>tabular</td>
+                  </tr>
+                  <tr>
+                    <td>1,011</td>
+                    <td>information</td>
+                    <td>placeholder</td>
+                    <td>illustrative</td>
+                    <td>data</td>
+                  </tr>
+                  <tr>
+                    <td>1,012</td>
+                    <td>text</td>
+                    <td>placeholder</td>
+                    <td>layout</td>
+                    <td>dashboard</td>
+                  </tr>
+                  <tr>
+                    <td>1,013</td>
+                    <td>dashboard</td>
+                    <td>irrelevant</td>
+                    <td>text</td>
+                    <td>visual</td>
+                  </tr>
+                  <tr>
+                    <td>1,014</td>
+                    <td>dashboard</td>
+                    <td>illustrative</td>
+                    <td>rich</td>
+                    <td>data</td>
+                  </tr>
+                  <tr>
+                    <td>1,015</td>
+                    <td>random</td>
+                    <td>tabular</td>
+                    <td>information</td>
+                    <td>text</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </main>
         </div>
       </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+      
+    </div>
   )
 }
