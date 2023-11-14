@@ -168,3 +168,19 @@
 .scrollarea {
   overflow-y: auto;
 }
+
+.bg-tourPurple {
+  background-color: #7039aa;
+}
+
+.bg-lightPurple {
+  background-color: #8a52ba;
+}
+
+.bg-blueSky {
+  background-color: #79def2;
+}
+
+.bg-darkSky {
+  background-color: #1c0f36;
+}

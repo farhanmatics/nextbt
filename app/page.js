@@ -1,12 +1,26 @@
 import Image from 'next/image'
 import styles from './page.module.css'
-import { ThumbsUp, AlignJustify, Airplay, SendHorizontal, LayoutPanelTop, FileOutput, ChevronRight } from "lucide-react";
+import { Plus, AlignJustify, Airplay, SendHorizontal, LayoutPanelTop, FileOutput, ChevronRight, ChevronLeft } from "lucide-react";
 
 export default function Home() {
   return (
     <div>
       <header className='navbar sticky-top flex-md-nowrap p-0 shadow' style={{backgroundColor:'#7039aa'}}>
         <a className='navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6 text-white' href="#">Tourista</a>
+        <div className='d-flex d-none d-md-block px-5 dropdown'>
+
+              <a className="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <img src="https://github.com/shadcn.png" className='rounded-circle' style={{height: 30, width: 30}} alt="" />
+              </a>
+              <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="navbarScrollingDropdown">
+              <li><a className="dropdown-item fw-medium" href="#" style={{fontSize: 12}}><FileOutput size={14} className='mb-1'/><span className='p-2'>My Profile</span></a></li>
+                <li><a className="dropdown-item fw-medium" href="#" style={{fontSize: 12}}><FileOutput size={14} className='mb-1'/><span className='p-2'>Settings</span></a></li>
+                <li><hr className="dropdown-divider" /></li>
+                <li><a className="dropdown-item fw-medium" href="#" style={{fontSize: 12}}><FileOutput size={14} className='mb-1'/><span className='p-2'>Logout</span></a></li>
+              </ul>
+            
+          
+        </div>
         <ul className="navbar-nav flex-row d-md-none">
           <li className="nav-item text-nowrap">
             <button className="nav-link px-3 text-white" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation"><AlignJustify size={18}/>
@@ -19,7 +33,7 @@ export default function Home() {
         <div className='row'>
           {/* SIDEBAR */}
           <div className='sidebar border border-right col-md-3 col-lg-2 p-0 bg-body-tertiary'>
-            <div className="offcanvas-md offcanvas-end bg-body-tertiary" tabindex="-1" id="sidebarMenu" aria-labelledby="sidebarMenuLabel">
+            <div className="offcanvas-md offcanvas-end bg-body-tertiary" tabIndex="-1" id="sidebarMenu" aria-labelledby="sidebarMenuLabel">
               <div className="offcanvas-header">
                 <h5 className="offcanvas-title" id="sidebarMenuLabel">Tourista</h5>
                 <button type="button" className="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#sidebarMenu" aria-label="Close"></button>
@@ -33,11 +47,12 @@ export default function Home() {
                     </a>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-link d-inline-flex align-items-center gap-2 collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
-                      <SendHorizontal size={18} strokeWidth={2.1}/>
+                    {/* COLLAPSE */}
+                    <a className="nav-link d-inline-flex align-items-center gap-2 collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false">
+                      <SendHorizontal size={18}/>
                       Orders
                     </a>
-                    <div className="collapse show" id="home-collapse">
+                    <div className="collapse" id="home-collapse">
                       <ul className="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                         <li>
                           <a href="#" className="link-body-emphasis d-inline-flex text-decoration-none rounded">
@@ -61,10 +76,33 @@ export default function Home() {
                     </div>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-link d-flex align-items-center gap-2" href="#">
+                    {/* COLLAPSE */}
+                    <a className="nav-link d-inline-flex align-items-center gap-2" href="#" data-bs-toggle="collapse" data-bs-target="#prod-collapse" aria-expanded="false">
                       <Airplay size={18}/>
                       Products
                     </a>
+                    <div className="collapse" id="prod-collapse">
+                      <ul className="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                        <li>
+                          <a href="#" className="link-body-emphasis d-inline-flex text-decoration-none rounded">
+                            <ChevronRight size={16} strokeWidth={3}/>
+                            Overview
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#" className="link-body-emphasis d-inline-flex text-decoration-none rounded">
+                            <ChevronRight size={16} strokeWidth={3}/>
+                            Updates
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#" className="link-body-emphasis d-inline-flex text-decoration-none rounded">
+                            <ChevronRight size={16} strokeWidth={3} />
+                            Reports
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
                   </li>
                   <li className="nav-item">
                     <a className="nav-link d-flex align-items-center gap-2" href="#">
@@ -90,6 +128,7 @@ export default function Home() {
                   <span>Saved reports</span>
                   <a className="link-secondary" href="#" aria-label="Add a new report">
                     {/* plus icon */}
+                    <Plus size={16} color='#000'/>
                   </a>
                 </h6>
                 <ul className="nav flex-column mb-auto">
