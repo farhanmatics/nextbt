@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import styles from './page.module.css'
-import { Plus, AlignJustify, Airplay, SendHorizontal, LayoutPanelTop, FileOutput, ChevronRight, ChevronLeft } from "lucide-react";
+import { Plus, AlignJustify, Airplay, SendHorizontal, LayoutPanelTop, FileOutput, ChevronRight, ChevronLeft, Settings, User, PackageCheck, Package, Users2, Binary, CircuitBoard, Component, Layers, Move3D, Network, Nfc, Tornado } from "lucide-react";
 
 export default function Home() {
   return (
@@ -10,13 +10,28 @@ export default function Home() {
         <div className='d-flex d-none d-md-block px-5 dropdown'>
 
               <a className="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <img src="https://github.com/shadcn.png" className='rounded-circle' style={{height: 30, width: 30}} alt="" />
+                <img src="https://github.com/shadcn.png" className='rounded-circle' style={{height: 30, width: 30}} alt="" />
               </a>
               <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="navbarScrollingDropdown">
-              <li><a className="dropdown-item fw-medium" href="#" style={{fontSize: 12}}><FileOutput size={14} className='mb-1'/><span className='p-2'>My Profile</span></a></li>
-                <li><a className="dropdown-item fw-medium" href="#" style={{fontSize: 12}}><FileOutput size={14} className='mb-1'/><span className='p-2'>Settings</span></a></li>
+                <li>
+                  <a className="dropdown-item fw-medium" href="#" style={{fontSize: 12}}>
+                    <User size={14} className='mb-1'/>
+                    <span className='p-2'>My Profile</span>
+                  </a>
+                </li>
+                <li>
+                  <a className="dropdown-item fw-medium" href="#" style={{fontSize: 12}}>
+                    <Settings size={14} className='mb-1'/>
+                    <span className='p-2'>Settings</span>
+                  </a>
+                </li>
                 <li><hr className="dropdown-divider" /></li>
-                <li><a className="dropdown-item fw-medium" href="#" style={{fontSize: 12}}><FileOutput size={14} className='mb-1'/><span className='p-2'>Logout</span></a></li>
+                <li>
+                  <a className="dropdown-item fw-medium" href="#" style={{fontSize: 12}}>
+                    <FileOutput size={14} className='mb-1'/>
+                    <span className='p-2'>Logout</span>
+                  </a>
+                </li>
               </ul>
             
           
@@ -49,7 +64,7 @@ export default function Home() {
                   <li className="nav-item">
                     {/* COLLAPSE */}
                     <a className="nav-link d-inline-flex align-items-center gap-2 collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false">
-                      <SendHorizontal size={18}/>
+                      <PackageCheck size={18}/>
                       Orders
                     </a>
                     <div className="collapse" id="home-collapse">
@@ -78,8 +93,8 @@ export default function Home() {
                   <li className="nav-item">
                     {/* COLLAPSE */}
                     <a className="nav-link d-inline-flex align-items-center gap-2" href="#" data-bs-toggle="collapse" data-bs-target="#prod-collapse" aria-expanded="false">
-                      <Airplay size={18}/>
-                      Products
+                      <Package size={18}/>
+                      Packages
                     </a>
                     <div className="collapse" id="prod-collapse">
                       <ul className="btn-toggle-nav list-unstyled fw-normal pb-1 small">
@@ -106,26 +121,32 @@ export default function Home() {
                   </li>
                   <li className="nav-item">
                     <a className="nav-link d-flex align-items-center gap-2" href="#">
-                      <Airplay size={18}/>  
+                      <Users2 size={18}/>  
                       Customers
                     </a>
                   </li>
                   <li className="nav-item">
                     <a className="nav-link d-flex align-items-center gap-2" href="#">
-                      <Airplay size={18}/>
-                      Reports
+                      <Binary size={18} />
+                      Accounts
                     </a>
                   </li>
                   <li className="nav-item">
                     <a className="nav-link d-flex align-items-center gap-2" href="#">
-                      <Airplay size={18}/>
-                      Integrations
+                      <CircuitBoard size={18}/>
+                      Partner Integrations
+                    </a>
+                  </li>
+                  <li className="nav-item">
+                    <a className="nav-link d-flex align-items-center gap-2" href="#">
+                      <Layers size={18}/>
+                      Billing & Invoice
                     </a>
                   </li>
                 </ul>
 
                 <h6 className="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-body-secondary text-uppercase">
-                  <span>Saved reports</span>
+                  <span>Management</span>
                   <a className="link-secondary" href="#" aria-label="Add a new report">
                     {/* plus icon */}
                     <Plus size={16} color='#000'/>
@@ -134,26 +155,32 @@ export default function Home() {
                 <ul className="nav flex-column mb-auto">
                   <li className="nav-item">
                     <a className="nav-link d-flex align-items-center gap-2" href="#">
-                      <Airplay size={18}/>
-                      Current month
+                      <Component size={18}/>
+                      Current month Status
                     </a>
                   </li>
                   <li className="nav-item">
                     <a className="nav-link d-flex align-items-center gap-2" href="#">
-                      <Airplay size={18}/>
-                      Last quarter
+                      <Move3D size={18}/>
+                      Lead Management
                     </a>
                   </li>
                   <li className="nav-item">
                     <a className="nav-link d-flex align-items-center gap-2" href="#">
-                      <Airplay size={18}/>
-                      Social engagement
+                      <Network size={18}/>
+                      System Users
                     </a>
                   </li>
                   <li className="nav-item">
                     <a className="nav-link d-flex align-items-center gap-2" href="#">
-                      <Airplay size={18}/>
-                      Year-end sale
+                      <Nfc size={18}/>
+                      Campaign Management
+                    </a>
+                  </li>
+                  <li className="nav-item">
+                    <a className="nav-link d-flex align-items-center gap-2" href="#">
+                      <Tornado size={18}/>
+                      Reporting
                     </a>
                   </li>
                 </ul>
