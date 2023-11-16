@@ -7,7 +7,7 @@ const layout = ({ children }) => {
   return (
     <div>
       <header className='navbar sticky-top flex-md-nowrap p-0 shadow' style={{backgroundColor:'#7039aa'}}>
-        <a className='navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6 text-white' href="#">Tourista</a>
+        <a className='navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6 text-white fw-bold fs-4' href="#">Tourista</a>
         <div className='d-flex d-none d-md-block px-5 dropdown'>
           <a className="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             <img src="https://github.com/shadcn.png" className='rounded-circle' style={{height: 30, width: 30}} alt="" />
@@ -44,7 +44,7 @@ const layout = ({ children }) => {
       <div className='container-fluid'>
         <div className='row'>
           {/* SIDEBAR */}
-          <div className='sidebar border border-right col-md-3 col-lg-2 p-0 bg-body-tertiary h-100'>
+          <div className='sidebar border border-right col-md-3 col-lg-2 p-0 bg-body-tertiary'>
             <div className="offcanvas-md offcanvas-end bg-body-tertiary" tabIndex="-1" id="sidebarMenu" aria-labelledby="sidebarMenuLabel">
               <div className="offcanvas-header">
                 <h5 className="offcanvas-title" id="sidebarMenuLabel">Tourista</h5>
@@ -53,25 +53,25 @@ const layout = ({ children }) => {
               <div className="offcanvas-body d-md-flex flex-column p-0 pt-lg-3 overflow-y-auto">
                 <ul className="nav flex-column">
                   <li className="nav-item">
-                    <a className="nav-link d-flex align-items-center gap-2 active" aria-current="page" href="#">
+                    <a className="nav-link d-flex align-items-center gap-2 active fs-6 fw-medium" aria-current="page" href="#">
                       <Airplay size={18}/>
                       Dashboard
                     </a>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-link d-flex align-items-center gap-2" href="#">
+                    <a className="nav-link d-flex align-items-center gap-2 fs-6 fw-medium" href="#">
                       <Tornado size={18}/>  
                       Quick Visa
                     </a>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-link d-flex align-items-center gap-2" href="#">
+                    <a className="nav-link d-flex align-items-center gap-2 fs-6 fw-medium" href="#">
                       <PackageCheck size={18}/>  
                       Track Visa
                     </a>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-link d-flex align-items-center gap-2" href="#">
+                    <a className="nav-link d-flex align-items-center gap-2 fs-6 fw-medium" href="#">
                       <CircuitBoard size={18}/>  
                       History
                     </a>

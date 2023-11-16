@@ -184,3 +184,29 @@
 .bg-darkSky {
   background-color: #1c0f36;
 }
+
+.full-height-div {
+  height: 100vh; /* 100% of the viewport height */
+}
+
+.small-font {
+  font-size: 12px;
+}
+
+.font-mid {
+  font-size: 14px;
+}
+
+.btn-lightPurple {
+  background-color: #8a52ba;
+  color: #fff;
+}
+
+.btn-lightPurple:hover {
+  background-color: #7039aa;
+  color: #fff;
+}
+
+.text-tourista {
+  color: #7039aa;
+}
